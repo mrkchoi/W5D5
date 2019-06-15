@@ -13,11 +13,8 @@ const reader = readline.createInterface({
 function askIfGreaterThan(el1, el2, callback) {
   // Prompt user to tell us whether el1 > el2; pass true back to the
   // callback if true; else false.
-  let res;
-  reader.question("Helloworld", function(ans){ res = ans});
-  console.log(res);
 
-  reader.question("Helloworld", 
+  reader.question(`Evaluate this statement:\n${el1} > ${el2}\n\nType 'yes' if true, 'no' otherwise. \n\n`, 
   function(ans) {
     if (ans === 'yes') {
       callback(true);
@@ -26,7 +23,7 @@ function askIfGreaterThan(el1, el2, callback) {
     }
   });
 }
-// Evaluate this statement:\n${el1} > ${el2}\n\nType 'yes' if true, 'no' otherwise. \n\n
+// 
 
 
 // askIfGreaterThan(1,2, el => console.log(`We are amazing!! Responded with: ${el}`));
